@@ -1,0 +1,34 @@
+{
+  "name": "insure-helper",
+  "version": "1.0.0",
+  "description": "Helper for insurance agents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaHuang/insure-helper.git"
+  },
+  "keywords": [
+    "insure-helper"
+  ],
+  "author": "Andrea Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaHuang/insure-helper/issues"
+  },
+  "homepage": "https://github.com/AndreaHuang/insure-helper#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "financejs": "^4.1.0",
+    "knex": "^0.14.4",
+    "pg": "^7.4.1"
+  }
+}
