@@ -28,7 +28,7 @@ app.get("/", (req,res)=> {res.send("Hello")});
 app.get("/ci", (req,res)=> {
 	var a = db.select('*').from('rate').where({product_code:'CIM',anb:30}).then((data)=>
 		{	console.log(data[0]);
-			res.send(data[0]);
+			res.json(data[0]);
 		}
 
 		);
@@ -41,7 +41,7 @@ app.post("/irr", (req,res)=> {
 	//console.log(req.body);
 	let result= irrHandler.handleIRR(req.body);
 	console.log(result);
-	res.send(result);
+	res.json(result);
 });
 	
 
