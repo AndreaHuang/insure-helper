@@ -49,5 +49,5 @@ app.post("/irr", (req,res)=> {
 
 //app.listen(3000, ()=>console.log('Working on port 3000!'));
 
-
-app.listen(process.env.PORT||8080, () => console.log('Example app listening on port  ${process.env.PORT||8080} !');)
+let port = process.env.PORT||8080;
+app.listen(port, () => console.log('Example app listening on port  ${port} !'));
