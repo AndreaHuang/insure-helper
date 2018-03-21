@@ -21,6 +21,9 @@ const  calIRR =(depositAmtYearly,depositYear,withdrawAmt,withdrawYear)=>{
     if(cashFlow.cashValue) {
 		result = [];
 		cashFlow.cashValue.map((cashValueItem)=>{
+			if(!cashValueItem.value) {
+				return;
+			}
 			if(cashValueItem.year) {
 				let irr = calIRR (depositAmtYearly,depositYear,cashValueItem.value,cashValueItem.year);
 				result.push({ year: cashValueItem.year,percentage: (cashValueItem.value/(1000*totalDeposit)).toFixed(2), irr : irr})
@@ -31,8 +34,6 @@ const  calIRR =(depositAmtYearly,depositYear,withdrawAmt,withdrawYear)=>{
 			}
 		})
 	}
-
-	
 	return result;
 
 }
@@ -57,7 +58,7 @@ const cashFlow={//1w5,44
     { anb: 101, value:1352848 }
 	]
 }
-console.log(JSON.stringify(cashFlow));
+//console.log(JSON.stringify(cashFlow));
 module.exports={handleIRR:handleIRR};
 
 //console.log(calculate(cashFlow));
