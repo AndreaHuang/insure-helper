@@ -3,6 +3,7 @@ var Finance = require('financejs');
 var finance = new Finance();
 
 const  calIRR =(depositAmtYearly,depositYear,withdrawAmt,withdrawYear)=>{
+	console.log(depositAmtYearly,depositYear,withdrawAmt,withdrawYear);
   var i= Array.apply(0, Array(depositYear)).map(function (x,i) { return (depositAmtYearly >0 ? -1* depositAmtYearly : depositAmtYearly);});
   var a=Array.apply(0, Array(withdrawYear - depositYear-1)).map(function (x,i) {return 0});
   let irr = finance.IRR(...i,...a,withdrawAmt);
@@ -11,6 +12,7 @@ const  calIRR =(depositAmtYearly,depositYear,withdrawAmt,withdrawYear)=>{
 
 
  const handleIRR = (cashFlow)=>{
+ 	console.log(cashFlow);
 	let depositAmtYearly, depositYear,year,cashValue, result, totalDeposit, anb;
 	anb = cashFlow.anb;
 	if(cashFlow.deposit) {
